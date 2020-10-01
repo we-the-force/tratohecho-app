@@ -7,6 +7,7 @@ import {
   NavTitleLarge,
   NavRight,
   Link,
+  ListInput,
   Toolbar,
   Block,
   BlockTitle,
@@ -16,7 +17,14 @@ import {
   Col,
   Button,
   Searchbar,
-  Subnavbar
+  Subnavbar,
+  Icon,
+  Swiper,
+  SwiperSlide,
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter
 } from 'framework7-react';
 
 export default () => (
@@ -41,35 +49,160 @@ export default () => (
         ></Searchbar>
       </Subnavbar>
     </Navbar>
-
+    <div className="home-splash">
+      <img className="logo" src="static/img/home-logo.png" alt=""/>
+      <Block strong inset className="searchBlock">
+      <List noHairlines className="searchForm">
+      <ListInput
+          label="Tipo de inmueble"
+          type="select"
+          defaultValue="Todos"
+          noHairline
+          placeholder="Selecciona uno..."
+          className="select-search"
+        >
+          <Icon icon="demo-list-icon" slot="media"/>
+          <option value="Male">Todos</option>
+          <option value="Female">Casa</option>
+          <option value="Female">Departamento</option>
+          <option value="Female">Terreno</option>
+        </ListInput>
+      <ListInput
+          label="Ubicación"
+          type="select"
+          defaultValue="Todos"
+          placeholder="Selecciona una..."
+          className="select-search"
+        >
+          <Icon icon="demo-list-icon" slot="media"/>
+          <option value="Male">Todos</option>
+          <option value="Female">Coahuila</option>
+          <option value="Female">Durango</option>
+          <option value="Female">Nuevo León</option>
+        </ListInput>
+      <ListInput
+          label="Delegación o Municipio"
+          type="select"
+          defaultValue="Todos"
+          placeholder="Selecciona uno..."
+          className="select-search"
+        >
+          <Icon icon="demo-list-icon" slot="media"/>
+          <option value="Male">Todos</option>
+          <option value="Female">Saltillo</option>
+          <option value="Female">Ramos Arispe</option>
+          <option value="Female">Torreón</option>
+        </ListInput>
+      </List>
+      <Button className="searchBtn" fill round iconIos="material:search">Buscar</Button>
+      </Block>
+    </div>
     {/* Page content */}
-    <Block strong>
-      div.
-    </Block>
-    <Block strong>
-      <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+    
+    
+    <BlockTitle>Inmuebles Recomendados</BlockTitle>
+    <Swiper className="realstateSwiper" params={{speed:500, slidesPerView: 1.5, spaceBetween: 10}}>
+      <SwiperSlide>
+      <Card className="demo-card-header-pic realstate-card">
+          <CardHeader
+            className="no-border card-img"
+            valign="bottom"
+            style={{ backgroundImage: 'url(static/img/casa-card.jpg)' }}
+          ></CardHeader>
+          <CardContent>
+            <p className="price">Desde<br/><b>$1,234,567.00</b></p>
+            <p className="place">Lugar: Loma Larga<br/>Estado: Nuevo León</p>
+          </CardContent>
+          {/* <CardFooter>
+            <Link>Like</Link>
+            <Link>Read more</Link>
+          </CardFooter> */}
+        </Card>
+      </SwiperSlide>
+      <SwiperSlide>
+      <Card className="demo-card-header-pic realstate-card">
+          <CardHeader
+            className="no-border card-img"
+            valign="bottom"
+            style={{ backgroundImage: 'url(static/img/casa-card.jpg)' }}
+          ></CardHeader>
+          <CardContent>
+            <p className="price">Desde<br/><b>$1,234,567.00</b></p>
+            <p className="place">Lugar: Loma Larga<br/>Estado: Nuevo León</p>
+          </CardContent>
+          {/* <CardFooter>
+            <Link>Like</Link>
+            <Link>Read more</Link>
+          </CardFooter> */}
+        </Card>
+      </SwiperSlide>
+      <SwiperSlide>
+      <Card className="demo-card-header-pic realstate-card">
+          <CardHeader
+            className="no-border card-img"
+            valign="bottom"
+            style={{ backgroundImage: 'url(static/img/casa-card.jpg)' }}
+          ></CardHeader>
+          <CardContent>
+            <p className="price">Desde<br/><b>$1,234,567.00</b></p>
+            <p className="place">Lugar: Loma Larga<br/>Estado: Nuevo León</p>
+          </CardContent>
+          {/* <CardFooter>
+            <Link>Like</Link>
+            <Link>Read more</Link>
+          </CardFooter> */}
+        </Card>
+      </SwiperSlide>
+      <SwiperSlide>
+      <Card className="demo-card-header-pic realstate-card">
+          <CardHeader
+            className="no-border card-img"
+            valign="bottom"
+            style={{ backgroundImage: 'url(static/img/casa-card.jpg)' }}
+          ></CardHeader>
+          <CardContent>
+            <p className="price">Desde<br/><b>$1,234,567.00</b></p>
+            <p className="place">Lugar: Loma Larga<br/>Estado: Nuevo León</p>
+          </CardContent>
+          {/* <CardFooter>
+            <Link>Like</Link>
+            <Link>Read more</Link>
+          </CardFooter> */}
+        </Card>
+      </SwiperSlide>
+      <SwiperSlide>
+      <Card className="demo-card-header-pic realstate-card">
+          <CardHeader
+            className="no-border card-img"
+            valign="bottom"
+            style={{ backgroundImage: 'url(static/img/casa-card.jpg)' }}
+          ></CardHeader>
+          <CardContent>
+            <p className="price">Desde<br/><b>$1,234,567.00</b></p>
+            <p className="place">Lugar: Loma Larga<br/>Estado: Nuevo León</p>
+          </CardContent>
+          {/* <CardFooter>
+            <Link>Like</Link>
+            <Link>Read more</Link>
+          </CardFooter> */}
+        </Card>
+      </SwiperSlide>
+      
+    </Swiper>
 
-      <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
-    </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List>
-      <ListItem link="/about/" title="About"/>
-      <ListItem link="/form/" title="Form"/>
-    </List>
-
-    <BlockTitle>Modals</BlockTitle>
+    {/* <BlockTitle>Modals</BlockTitle> */}
     <Block strong>
       <Row>
-        <Col width="50">
+        {/* <Col width="50">
           <Button fill raised popupOpen="#my-popup">Popup</Button>
-        </Col>
-        <Col width="50">
+        </Col> */}
+        {/* <Col width="50">
           <Button fill raised loginScreenOpen="#my-login-screen">Login Screen</Button>
-        </Col>
+        </Col> */}
       </Row>
     </Block>
 
-    <BlockTitle>Panels</BlockTitle>
+    {/* <BlockTitle>Panels</BlockTitle>
     <Block strong>
       <Row>
         <Col width="50">
@@ -79,20 +212,21 @@ export default () => (
           <Button fill raised panelOpen="right">Right Panel</Button>
         </Col>
       </Row>
-    </Block>
+    </Block> */}
 
     <List>
-      <ListItem
+      {/* <ListItem
         title="Dynamic (Component) Route"
         link="/dynamic-route/blog/45/post/125/?foo=bar#about"
       />
       <ListItem
         title="Default Route (404)"
         link="/load-something-that-doesnt-exist/"
-      />
+      /> */}
       <ListItem
-        title="Request Data & Load"
-        link="/request-and-load/user/123456/"
+        title="Login Screen"
+        loginScreenOpen="#my-login-screen"
+        link="#"
       />
     </List>
   </Page>

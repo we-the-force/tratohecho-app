@@ -17,6 +17,8 @@ import {
   LoginScreenTitle,
   List,
   ListItem,
+  Toggle,
+  Range,
   ListInput,
   ListButton,
   BlockFooter
@@ -133,7 +135,8 @@ export default class extends React.Component {
             <Link tabLink="#view-home" tabLinkActive iconIos="f7:house_fill" iconAurora="f7:house_fill" iconMd="material:home"  />
             
             <Link tabLink="#view-search" iconIos="material:search" iconAurora="f7:square_list_fill" iconMd="material:account_circle"  />
-            <Link tabLink="#view-form" iconIos="material:add_circle" iconAurora="f7:square_list_fill" iconMd="material:account_circle"  />
+            <Link  iconIos="material:add_circle" iconAurora="f7:square_list_fill"
+            popupOpen="#my-popup" iconMd="material:account_circle"  />
 
             <Link tabLink="#view-messages" iconIos="material:question_answer" iconAurora="f7:square_list_fill" iconMd="material:account_circle"  />
             
@@ -163,14 +166,83 @@ export default class extends React.Component {
         <Popup id="my-popup">
           <View>
             <Page>
-              <Navbar title="Popup">
+              <Navbar title="Agregar anuncio">
                 <NavRight>
                   <Link popupClose>Close</Link>
                 </NavRight>
               </Navbar>
-              <Block>
-                <p>Popup content goes here.</p>
-              </Block>
+              <BlockTitle>Agregar Anuncio</BlockTitle>
+              <List noHairlinesMd>
+                <ListInput
+                  label="Name"
+                  type="text"
+                  placeholder="Your name"
+                ></ListInput>
+
+                <ListInput
+                  label="E-mail"
+                  type="email"
+                  placeholder="E-mail"
+                ></ListInput>
+
+                <ListInput
+                  label="URL"
+                  type="url"
+                  placeholder="URL"
+                ></ListInput>
+
+                <ListInput
+                  label="Password"
+                  type="password"
+                  placeholder="Password"
+                ></ListInput>
+
+                <ListInput
+                  label="Phone"
+                  type="tel"
+                  placeholder="Phone"
+                ></ListInput>
+
+                <ListInput
+                  label="Gender"
+                  type="select"
+                  >
+                  <option>Male</option>
+                  <option>Female</option>
+                </ListInput>
+
+                <ListInput
+                  label="Birth date"
+                  type="date"
+                  placeholder="Birth day"
+                  defaultValue="2014-04-30"
+                ></ListInput>
+
+                <ListItem
+                  title="Toggle"
+                >
+                  <Toggle slot="after" />
+                </ListItem>
+
+                <ListInput
+                  label="Range"
+                  input={false}
+                >
+                  <Range slot="input" value={50} min={0} max={100} step={1} />
+                </ListInput>
+
+                <ListInput
+                  type="textarea"
+                  label="Textarea"
+                  placeholder="Bio"
+                ></ListInput>
+                <ListInput
+                  type="textarea"
+                  label="Resizable"
+                  placeholder="Bio"
+                  resizable
+                ></ListInput>
+              </List>
             </Page>
           </View>
         </Popup>
@@ -178,6 +250,11 @@ export default class extends React.Component {
         <LoginScreen id="my-login-screen">
           <View>
             <Page loginScreen>
+            <Navbar noHairline transparent >
+                <NavRight>
+                  <Link loginScreenClose>Cerrar</Link>
+                </NavRight>
+              </Navbar>
               <LoginScreenTitle>Login</LoginScreenTitle>
               <List form>
                 <ListInput
