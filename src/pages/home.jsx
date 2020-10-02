@@ -189,7 +189,7 @@ export default () => (
       </SwiperSlide>
       
     </Swiper>
-
+    <BlockTitle>Noticias</BlockTitle>
     {/* <BlockTitle>Modals</BlockTitle> */}
     <Block strong>
       <Row>
